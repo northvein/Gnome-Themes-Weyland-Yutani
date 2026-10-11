@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3840" height="2160" viewBox="0 0 3840 2160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bg_radial" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0d120d"/>
+      <stop offset="100%" stop-color="#060806"/>
+    </radialGradient>
+
+    <!-- Amber glow for logo -->
+    <radialGradient id="amber_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c8920a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#c8920a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="rgba(0,0,0,0.12)" y="0"/>
+      <rect width="1" height="3" fill="transparent" y="1"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(200,146,10,0.04)" stroke-width="0.5"/>
+    </pattern>
+
+    <!-- Fine dot pattern -->
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="0.8" fill="rgba(200,146,10,0.08)"/>
+    </pattern>
+
+    <!-- Vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="60%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.7)"/>
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="strong_glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="3840" height="2160" fill="url(#bg_radial)"/>
+
+  <!-- Grid overlay -->
+  <rect width="3840" height="2160" fill="url(#grid)"/>
+  <rect width="3840" height="2160" fill="url(#dots)"/>
+
+  <!-- Ambient glow behind logo -->
+  <ellipse cx="1920" cy="1080" rx="900" ry="600" fill="url(#amber_glow)"/>
+
+  <!-- ========== WEYLAND-YUTANI LOGO (Center) ========== -->
+  <!-- Outer ring -->
+  <circle cx="1920" cy="1080" r="280" fill="none" stroke="#c8920a" stroke-width="1" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="1920" cy="1080" r="260" fill="none" stroke="#c8920a" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Inner ring -->
+  <circle cx="1920" cy="1080" r="220" fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="1920" cy="1080" r="200" fill="none" stroke="#c8920a" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Core hex shape -->
+  <polygon points="1920,880 2094,980 2094,1180 1920,1280 1746,1180 1746,980"
+           fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.6" filter="url(#glow)"/>
+
+  <!-- Inner hex -->
+  <polygon points="1920,940 2054,1015 2054,1165 1920,1240 1786,1165 1786,1015"
+           fill="rgba(200,146,10,0.03)" stroke="#c8920a" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- Cross-hairs -->
+  <line x1="1920" y1="820" x2="1920" y2="870" stroke="#c8920a" stroke-width="1" opacity="0.5"/>
+  <line x1="1920" y1="1290" x2="1920" y2="1340" stroke="#c8920a" stroke-width="1" opacity="0.5"/>
+  <line x1="1660" y1="1080" x2="1710" y2="1080" stroke="#c8920a" stroke-width="1" opacity="0.5"/>
+  <line x1="2130" y1="1080" x2="2180" y2="1080" stroke="#c8920a" stroke-width="1" opacity="0.5"/>
+
+  <!-- WY Monogram -->
+  <!-- W -->
+  <text x="1830" y="1115" font-family="'Courier New', monospace" font-size="120"
+        font-weight="bold" fill="#c8920a" opacity="0.9" letter-spacing="-5"
+        filter="url(#strong_glow)">WY</text>
+
+  <!-- ========== TAGLINE ========== -->
+  <text x="1920" y="1380" font-family="'Courier New', monospace" font-size="22"
+        fill="#c8920a" opacity="0.7" text-anchor="middle" letter-spacing="8"
+        font-weight="bold">BUILDING BETTER WORLDS</text>
+
+  <text x="1920" y="1410" font-family="'Courier New', monospace" font-size="11"
+        fill="#8a7a62" opacity="0.5" text-anchor="middle" letter-spacing="4">
+    WEYLAND-YUTANI CORPORATION — EST. 2023
+  </text>
+
+  <!-- ========== TOP CLASSIFICATION BAR ========== -->
+  <rect x="0" y="0" width="3840" height="40" fill="#080a08"/>
+  <rect x="0" y="39" width="3840" height="1" fill="#c8920a" opacity="0.3"/>
+
+  <text x="40" y="26" font-family="'Courier New', monospace" font-size="11"
+        fill="#c8920a" opacity="0.6" letter-spacing="3">
+    WEYLAND-YUTANI CORP — MU/TH/UR 6000 — CLEARANCE: EXECUTIVE
+  </text>
+
+  <text x="3800" y="26" font-family="'Courier New', monospace" font-size="11"
+        fill="#8a7a62" opacity="0.5" letter-spacing="2" text-anchor="end">
+    [ENCRYPTED] AUTHORIZATION REQUIRED
+  </text>
+
+  <!-- ========== BOTTOM STATUS BAR ========== -->
+  <rect x="0" y="2120" width="3840" height="40" fill="#080a08"/>
+  <rect x="0" y="2120" width="3840" height="1" fill="#c8920a" opacity="0.3"/>
+
+  <text x="40" y="2145" font-family="'Courier New', monospace" font-size="11"
+        fill="#8a7a62" opacity="0.4" letter-spacing="2">
+    CORPORATE NETWORK — ALL ACTIVITY MONITORED — PROPERTY OF WEYLAND-YUTANI CORP
+  </text>
+
+  <text x="3800" y="2145" font-family="'Courier New', monospace" font-size="11"
+        fill="#c8920a" opacity="0.5" letter-spacing="1" text-anchor="end">
+    STATUS: NOMINAL ■■■■■■■■□□ 82%
+  </text>
+
+  <!-- ========== CORNER DECORATIONS ========== -->
+  <!-- Top-left bracket -->
+  <path d="M 80 80 L 80 60 L 60 60" fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 80 80 L 60 80 L 60 60" fill="none" stroke="#c8920a" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Top-right bracket -->
+  <path d="M 3760 80 L 3760 60 L 3780 60" fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bottom-left bracket -->
+  <path d="M 80 2080 L 80 2100 L 60 2100" fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Bottom-right bracket -->
+  <path d="M 3760 2080 L 3760 2100 L 3780 2100" fill="none" stroke="#c8920a" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- ========== LEFT PANEL — SYSTEM READOUTS ========== -->
+  <rect x="60" y="140" width="280" height="1" fill="#c8920a" opacity="0.3"/>
+  <text x="60" y="130" font-family="'Courier New', monospace" font-size="9"
+        fill="#c8920a" opacity="0.5" letter-spacing="3">SYS.DIAGNOSTICS</text>
+
+  <text x="60" y="175" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1">CPU LOAD     ░░░░░░░░▓▓  24%</text>
+  <text x="60" y="195" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1">MEMORY       ░░░░▓▓▓▓▓▓  67%</text>
+  <text x="60" y="215" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1">NETWORK      ░▓▓▓▓▓▓▓▓▓  91%</text>
+  <text x="60" y="235" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1">STORAGE      ░░░░░░▓▓▓▓  48%</text>
+  <text x="60" y="255" font-family="'Courier New', monospace" font-size="10"
+        fill="#4a7c3f" opacity="0.5" letter-spacing="1">THREAT LVL   ░░░░░░░░░░   0%</text>
+
+  <rect x="60" y="270" width="280" height="1" fill="#c8920a" opacity="0.15"/>
+
+  <text x="60" y="295" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1">CRYOGENICS........NOMINAL</text>
+  <text x="60" y="315" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1">LIFE SUPPORT......NOMINAL</text>
+  <text x="60" y="335" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1">HYPERDRIVE........STANDBY</text>
+  <text x="60" y="355" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1">WEAP.SYSTEMS......LOCKED</text>
+  <text x="60" y="375" font-family="'Courier New', monospace" font-size="9"
+        fill="#c8920a" opacity="0.35" letter-spacing="1">SPECIAL.ORDER 937.ACTIVE</text>
+
+  <!-- ========== RIGHT PANEL — COORDINATES ========== -->
+  <rect x="3500" y="140" width="280" height="1" fill="#c8920a" opacity="0.3"/>
+  <text x="3780" y="130" font-family="'Courier New', monospace" font-size="9"
+        fill="#c8920a" opacity="0.5" letter-spacing="3" text-anchor="end">NAV.COORDINATES</text>
+
+  <text x="3780" y="175" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1" text-anchor="end">RA  12h 24m 17.2s</text>
+  <text x="3780" y="195" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1" text-anchor="end">DEC +11° 45' 30"</text>
+  <text x="3780" y="215" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1" text-anchor="end">LY   39.179 (ZETA RETICULI)</text>
+  <text x="3780" y="235" font-family="'Courier New', monospace" font-size="10"
+        fill="#8a7a62" opacity="0.45" letter-spacing="1" text-anchor="end">ETA  10M 12D 04H</text>
+  <text x="3780" y="255" font-family="'Courier New', monospace" font-size="10"
+        fill="#c8920a" opacity="0.45" letter-spacing="1" text-anchor="end">DEST ACHERON (LV-426)</text>
+
+  <rect x="3500" y="270" width="280" height="1" fill="#c8920a" opacity="0.15"/>
+
+  <text x="3780" y="295" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1" text-anchor="end">CREW MANIFEST: 7</text>
+  <text x="3780" y="315" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1" text-anchor="end">CARGO: CLASSIFIED</text>
+  <text x="3780" y="335" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1" text-anchor="end">PRIORITY: ALPHA-ONE</text>
+  <text x="3780" y="355" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1" text-anchor="end">AUTH: B. BISHOP / EXEC</text>
+  <text x="3780" y="375" font-family="'Courier New', monospace" font-size="9"
+        fill="#8a7a62" opacity="0.35" letter-spacing="1" text-anchor="end">VESSEL: USCSS NOSTROMO</text>
+
+  <!-- ========== SCANLINES OVERLAY ========== -->
+  <rect width="3840" height="2160" fill="url(#scanlines)" opacity="0.6"/>
+
+  <!-- Vignette -->
+  <rect width="3840" height="2160" fill="url(#vignette)"/>
+</svg>
